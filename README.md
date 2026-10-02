@@ -1,2 +1,4 @@
-# LADPowered
-A Python-based writing/worldbuilding management system | | | Or something close to that
+# StoryForge
+
+StoryForge is a Python-based writing tool designed to analyze fictional
+manuscripts and identify potential continuity issues.
