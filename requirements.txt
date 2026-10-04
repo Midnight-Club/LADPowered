@@ -1,0 +1,110 @@
+# StoryForge GitHub Project Board
+# 🟦 Phase 1: Basic Text Processing
+#  Create the StoryForge project folder
+#  Create main.py
+#  Create README.md
+#  Create .gitignore
+#  Create requirements.txt
+#  Make Python run successfully from main.py
+#  Create a sample chapter text file
+#  Read the chapter file from Python
+#  Store the entire chapter as a string
+#  Print the chapter to verify it was read correctly
+#  Split the chapter into individual sentences
+#  Handle sentences ending in ., ?, and !
+#  Split each sentence into individual words
+#  Print the words from each sentence
+#  Handle quotation marks and punctuation
+#  Test the parser with a longer chapter
+#  Test the parser with dialogue
+#  Test the parser with multiple paragraphs
+# 🟩 Phase 2: Make the Parser Actually Useful
+#  Remove unnecessary punctuation from words
+#  Preserve useful punctuation when necessary
+#  Normalize capitalization when comparing words
+#  Identify repeated words
+#  Count words in each sentence
+#  Count total words in a chapter
+#  Identify unique words
+#  Store parsed sentences in a structured format
+#  Store parsed words in a structured format
+#  Make the parser reusable with different chapter files
+# 🟨 Phase 3: Recognizing Things
+#  Create a character vocabulary
+#  Detect known character names
+#  Create an object vocabulary
+#  Detect known objects
+#  Create a location vocabulary
+#  Detect known locations
+#  Distinguish between known entities and ordinary words
+#  Record which sentences contain each character
+#  Record which sentences contain each object
+#  Record which sentences contain each location
+# 🟧 Phase 4: Extracting Facts Without AI
+#  Define what counts as a "fact"
+#  Create a simple fact data structure
+#  Recognize simple [character] → [property] → [value] statements
+#  Extract color information
+#  Extract simple character relationships
+#  Extract simple character/object relationships
+#  Store extracted facts in JSON
+#  Attach the chapter and sentence to each fact
+#  Handle multiple facts in one sentence
+#  Add more sentence patterns
+#  Write tests for fact extraction
+# 🟥 Phase 5: Continuity Checking
+#  Load previously extracted facts
+#  Compare new facts against existing facts
+#  Detect conflicting values
+#  Detect potentially conflicting relationships
+#  Identify the chapters containing conflicting information
+#  Generate a readable contradiction report
+#  Distinguish "possible contradiction" from confirmed contradiction
+#  Allow the writer to dismiss a flagged issue
+#  Allow the writer to mark a change as intentional
+# 🟪 Phase 6: AI Integration
+
+# Only start this after the non-AI system works.
+
+#  Research suitable AI APIs
+#  Learn how API requests work
+#  Connect StoryForge to an AI API
+#  Send a chapter passage to the AI
+#  Ask the AI to identify possible story facts
+#  Request structured JSON output
+#  Validate the AI's returned data
+#  Compare AI-extracted facts with existing canon
+#  Flag AI-detected potential contradictions
+#  Include the original passage as evidence
+#  Add confidence levels to AI-extracted information
+#  Require user confirmation before adding AI discoveries to canon
+#  Handle API errors
+#  Handle malformed AI responses
+#  Prevent sensitive/private manuscript data from being accidentally exposed
+# 🟫 Phase 7: User Interface
+#  Decide between command-line and web interface
+#  Build chapter import interface
+#  Display parsed chapters
+#  Display extracted facts
+#  Display continuity warnings
+#  Allow warnings to be reviewed
+#  Allow facts to be edited
+#  Allow facts to be confirmed/rejected
+#  Add search
+#  Search for characters
+#  Search for objects
+#  Search for locations
+#  Search for canon facts
+# ⚫ Phase 8: Portfolio Polish
+#  Write complete README
+#  Document project architecture
+#  Document how the parser works
+#  Document the non-AI fact extraction system
+#  Document the AI integration
+#  Add automated tests
+#  Add example/sample data that isn't private manuscript material
+#  Clean up project structure
+#  Add useful error messages
+#  Create screenshots/demo
+#  Create a short project demonstration
+#  Make first public release
