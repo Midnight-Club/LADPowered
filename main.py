@@ -38,15 +38,68 @@ def parse_words(sentence):
     return clean_words
 
 
-with open("chapter_01.txt", "r") as file:
-    text = file.read()
+#Finds the entities in a sentence based on a given vocabulary and returns a list of found entities.
+def find_entities(sentence, vocabulary):
 
-sentences = parse_sentences(text)
-
-for sentence in sentences:
-    words = parse_words(sentence["text"])
+    found = []
+    words = parse_words(sentence)
 
     for word in words:
-        print(word)
+        for entity in vocabulary:
+            if word.lower() == entity.lower():
+                if entity not in found:
+                    found.append(entity)
 
-print(sentences)
+    return found
+
+
+#Finds the sentences that contain the entities in the vocabulary and returns a dictionary with the entity as the key and a list of sentences as the value.
+def find_entity_sentences(list_of_sentences, vocabulary):
+
+    dictionary_for_each_entity_list = {}
+
+    for entity in vocabulary:
+        dictionary_for_each_entity_list[entity] = []
+
+    for sentence in list_of_sentences:
+        found = find_entities(sentence["text"], vocabulary)
+
+        for entity in found:
+            dictionary_for_each_entity_list[entity].append(sentence["text"])
+
+    return dictionary_for_each_entity_list
+
+
+
+#----------------------------------------------------------------------------------------------------------------
+
+
+
+# Known entity vocabularies
+
+characters = ["Ore", "Maribelle"]
+objects = ["fountain", "phone", "wallet", "theo-tool"]
+locations = ["gate", "garden", "pier", "Lair of the Arachnid"]
+
+
+# Read and parse the chapter
+
+with open("chapter_01.txt", "r", encoding="utf-8") as file:
+    text = file.read()
+
+list_of_sentences = parse_sentences(text)
+
+
+# Index sentences by entity category
+
+character_sentences = find_entity_sentences(list_of_sentences, characters)
+object_sentences = find_entity_sentences(list_of_sentences, objects)
+location_sentences = find_entity_sentences(list_of_sentences, locations)
+
+
+# Display results
+
+print("Characters:", character_sentences)
+print("Objects:", object_sentences)
+print("Locations:", location_sentences)
+
